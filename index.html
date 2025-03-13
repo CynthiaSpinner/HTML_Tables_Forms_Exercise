@@ -100,35 +100,35 @@
         </form>
       </section>
     </main>
-          <script>
-            document.getElementById('dataForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const drink = document.getElementById('drink').value;
-        const totalServ = document.getElementById('totalServ').value;
-        const servSize = document.getElementById('servSize').value;
-        const calPerServ = document.getElementById('calPerServ').value;
-        const carbPerServ = document.getElementById('carbPerServ').value;
-        const sugPerServ = document.getElementById('sugPerServ').value;
-        const sodPerServ = document.getElementById('sodPerServ').value;
-
-        const drinkMap = {
-          'Coca Cola': 1,
-          'Pepsi': 2,
-          'Coca Cola Zero': 3,
-          'Dr. Pepper': 4,
-          'Mountain Dew': 5
-        };
-
-        const rowIndex = drinkMap[drink];
-
-        document.getElementById('totalServ' + rowIndex).textContent = totalServ;
-        document.getElementById('servSize' + rowIndex).textContent = servSize;
-        document.getElementById('calPerServ' + rowIndex).textContent = calPerServ;
-        document.getElementById('carbPerServ' + rowIndex).textContent = carbPerServ;
-        document.getElementById('sugPerServ' + rowIndex).textContent = sugPerServ;
-        document.getElementById('sodPerServ' + rowIndex).textContent = sodPerServ;
-            });
-          </script>
+    <script>
+        document.getElementById('dataForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const drink = document.getElementById('drink').value;
+            const totalServ = document.getElementById('totalServ').value;
+            const servSize = document.getElementById('servSize').value;
+            const calPerServ = document.getElementById('calPerServ').value;
+            const carbPerServ = document.getElementById('carbPerServ').value;
+            const sugPerServ = document.getElementById('sugPerServ').value;
+            const sodPerServ = document.getElementById('sodPerServ').value;
+            
+            const drinkMap = {
+              'Coca Cola': 1,
+              'Pepsi': 2,
+              'Coca Cola Zero': 3,
+              'Dr. Pepper': 4,
+              'Mountain Dew': 5
+            };
+          
+            const rowIndex = drinkMap[drink];
+          
+            document.getElementById('totalServ' + rowIndex).textContent = totalServ;
+            document.getElementById('servSize' + rowIndex).textContent = servSize;
+            document.getElementById('calPerServ' + rowIndex).textContent = calPerServ;
+            document.getElementById('carbPerServ' + rowIndex).textContent = carbPerServ;
+            document.getElementById('sugPerServ' + rowIndex).textContent = sugPerServ;
+            document.getElementById('sodPerServ' + rowIndex).textContent = sodPerServ;
+        });
+    </script>
   </body>
 </html>
