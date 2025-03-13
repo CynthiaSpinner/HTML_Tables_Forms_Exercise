@@ -3,11 +3,132 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTML Tables and Forms</title>
+    <link rel="stylesheet" href="html.css" />
   </head>
   <body>
     <main>
-      <!-- Complete the Exercises HERE -->
-    </main>
-  </body>
-</html>
+      <h1 class="heading1">HTML Tables and Forms Exercise!</h1>
+      <section class="section1"></section>
+        <h2>Table</h2>
+        <table>
+            <thead>
+            <tr>
+              <th>Drinks</th>
+              <th>Total Servings</th>
+              <th>Serving Size</th>
+              <th>Calories Per Serving</th>
+              <th>Carbs Per Serving</th>
+              <th>Sugars Per Serving</th>
+              <th>Sodium Per Serving</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Coca Cola</td>
+              <td id="totalServ1"></td>
+              <td id="servSize1"></td>
+              <td id="calPerServ1"></td>
+              <td id="carbPerServ1"></td>
+              <td id="sugPerServ1"></td>
+              <td id="sodPerServ1"></td>
+            </tr>
+            <tr>
+              <td>Pepsi</td>
+              <td id="totalServ2"></td>
+              <td id="servSize2"></td>
+              <td id="calPerServ2"></td>
+              <td id="carbPerServ2"></td>
+              <td id="sugPerServ2"></td>
+              <td id="sodPerServ2"></td>
+            </tr>
+            <tr>
+              <td>Coca Cola Zero</td>
+              <td id="totalServ3"></td>
+              <td id="servSize3"></td>
+              <td id="calPerServ3"></td>
+              <td id="carbPerServ3"></td>
+              <td id="sugPerServ3"></td>
+              <td id="sodPerServ3"></td>
+            </tr>
+            <tr>
+              <td>Dr. Pepper</td>
+              <td id="totalServ4"></td>
+              <td id="servSize4"></td>
+              <td id="calPerServ4"></td>
+              <td id="carbPerServ4"></td>
+              <td id="sugPerServ4"></td>
+              <td id="sodPerServ4"></td>
+            </tr>
+            <tr>
+              <td>Mountain Dew</td>
+              <td id="totalServ5"></td>
+              <td id="servSize5"></td>
+              <td id="calPerServ5"></td>
+              <td id="carbPerServ5"></td>
+              <td id="sugPerServ5"></td>
+              <td id="sodPerServ5"></td>
+            </tr>
+            </tbody>
+          </thead>
+         
+        </table>
+        <h2>Form</h2>
+        <form id="dataForm">
+          <div class="form-group">
+            <label for="drink">Drink:</label>
+            <select id="drink">
+              <option value="Coca Cola">Coca Cola</option>
+              <option value="Pepsi">Pepsi</option>
+              <option value="Coca Cola Zero">Coca Cola Zero</option>
+              <option value="Dr. Pepper">Dr. Pepper</option>
+              <option value="Mountain Dew">Mountain Dew</option>
+            </select>
+            <label for="totalServ">Total Servings:</label>
+            <input type="text" id="totalServ" />
+            <label for="servSize">Serving Size:</label>
+            <input type="text" id="servSize" />
+            <label for="calPerServ">Calories Per Serving:</label>
+            <input type="text" id="calPerServ" />
+            <label for="carbPerServ">Carbs Per Serving:</label>
+            <input type="text" id="carbPerServ" />
+            <label for="sugPerServ">Sugars Per Serving:</label>
+            <input type="text" id="sugPerServ" />
+            <label for="sodPerServ">Sodium Per Serving:</label>
+            <input type="text" id="sodPerServ" />
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+            </section>
+          </main>
+          <script>
+            document.getElementById('dataForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const drink = document.getElementById('drink').value;
+        const totalServ = document.getElementById('totalServ').value;
+        const servSize = document.getElementById('servSize').value;
+        const calPerServ = document.getElementById('calPerServ').value;
+        const carbPerServ = document.getElementById('carbPerServ').value;
+        const sugPerServ = document.getElementById('sugPerServ').value;
+        const sodPerServ = document.getElementById('sodPerServ').value;
+
+        const drinkMap = {
+          'Coca Cola': 1,
+          'Pepsi': 2,
+          'Coca Cola Zero': 3,
+          'Dr. Pepper': 4,
+          'Mountain Dew': 5
+        };
+
+        const rowIndex = drinkMap[drink];
+
+        document.getElementById('totalServ' + rowIndex).textContent = totalServ;
+        document.getElementById('servSize' + rowIndex).textContent = servSize;
+        document.getElementById('calPerServ' + rowIndex).textContent = calPerServ;
+        document.getElementById('carbPerServ' + rowIndex).textContent = carbPerServ;
+        document.getElementById('sugPerServ' + rowIndex).textContent = sugPerServ;
+        document.getElementById('sodPerServ' + rowIndex).textContent = sodPerServ;
+            });
+          </script>
+        </body>
+      </html>
